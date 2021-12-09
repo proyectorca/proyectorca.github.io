@@ -131,7 +131,9 @@ export function
           </strong>
           <span
               class="secundario">
-          ${cod(data.descripcion)}
+          ${cod(data.
+// @ts-ignore
+          descripcion)}
           </span>
         </span>
       </label>
