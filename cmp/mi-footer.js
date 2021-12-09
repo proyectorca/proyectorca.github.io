@@ -6,6 +6,6 @@ class MiFooter extends HTMLElement {
         Alcala Ornelas CarlosAlberto.
       </p>`;
   }
-}
+} 
 
 customElements.define("mi-footer", MiFooter);
