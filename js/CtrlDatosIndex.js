@@ -19,7 +19,7 @@ import {
   /** @type {HTMLUListElement} */
   // @ts-ignore
   const lista = document.
-    querySelector("#lista");
+    querySelector("#datos");
   const firestore = getFirestore();
   const daoRol = firestore.
     collection("Rol");
@@ -87,7 +87,7 @@ import {
       await urlStorage(doc.id));
     const alumno =
       await buscaAlumno(
-        data.usuario );
+        data.id);
     const roles =
       await buscaRoles(data.rolIds);
     const parámetros =
