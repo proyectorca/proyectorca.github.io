@@ -18,7 +18,7 @@ import {
 /**__________________________________________ */
   /** @type {HTMLUListElement} */
   // @ts-ignore
-  const lista = document.
+  const datos = document.
     querySelector("#datos");
   const firestore = getFirestore();
   const daoRol = firestore.
@@ -71,7 +71,7 @@ import {
           registrados. --
         </li>`;
     }
-    lista.innerHTML = html;
+    datos.innerHTML = html;
   }
   
   /**
@@ -82,10 +82,10 @@ import {
     /**
      * @type {import("./tipos.js").
                         Usuario} */
-    const data = doc.data();
+    // @ts-ignore
+    const data = doc.data(daoUsuario);
     const img = cod(
-      // @ts-ignore
-      await urlStorage(doc.daoUsuario));
+      await urlStorage(doc.id));
     const alumno =
       await buscaAlumno(
         data.alumnoId);
