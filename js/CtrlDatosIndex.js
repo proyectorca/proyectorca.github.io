@@ -56,7 +56,7 @@ import {
       /** @type {
             Promise<string>[]} */
       let usuarios = [];
-      snap.forEach(doc => daoUsuario.
+      snap.forEach(doc => usuarios.
         push(htmlFila(doc)));
       const htmlFilas =
         await Promise.all(usuarios);
@@ -146,7 +146,7 @@ import {
    * @param {string[]} ids */
   async function buscaRoles(ids) {
     let html = "";
-    if (ids && ids.length > 0) {
+    if (daoUsuario && ids.length > 0) {
       for (const id of ids) {
         const doc = await daoRol.
           doc(id).
