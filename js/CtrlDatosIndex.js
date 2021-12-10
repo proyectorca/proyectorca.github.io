@@ -61,6 +61,7 @@ import {
        * elementos del arreglo en
        * una cadena. */
       html += htmlFilas.join("");
+     
     } else {
       html += /* html */
         `<li class="vacio">
@@ -89,7 +90,7 @@ import {
       await buscaRoles(data.rolIds);
     const parámetros =
       new URLSearchParams();
-    parámetros.append("id", doc.id);
+    parámetros.append("id", doc.id );
     return (/* html */
       `<li>
         <a class="fila conImagen"
