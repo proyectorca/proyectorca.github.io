@@ -84,7 +84,8 @@ import {
                         Usuario} */
     const data = doc.data();
     const img = cod(
-      await urlStorage(doc.id));
+      // @ts-ignore
+      await urlStorage(doc.daoUsuario));
     const alumno =
       await buscaAlumno(
         data.alumnoId);
@@ -146,7 +147,7 @@ import {
    * @param {string[]} ids */
   async function buscaRoles(ids) {
     let html = "";
-    if (ids == daoUsuario) {
+    if (ids && ids.length > 0) {
       for (const id of ids) {
         const doc = await daoRol.
           doc(id).
