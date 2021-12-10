@@ -12,14 +12,11 @@ import {
   import {
     tieneRol
   } from "./seguridad.js";
-//**____________________________________ */
-
-
-/**__________________________________________ */
+  
   /** @type {HTMLUListElement} */
   // @ts-ignore
-  const datos = document.
-    querySelector("#datos");
+  const lista = document.
+    querySelector("#lista");
   const firestore = getFirestore();
   const daoRol = firestore.
     collection("Rol");
@@ -71,7 +68,7 @@ import {
           registrados. --
         </li>`;
     }
-    datos.innerHTML = html;
+    lista.innerHTML = html;
   }
   
   /**
@@ -82,8 +79,7 @@ import {
     /**
      * @type {import("./tipos.js").
                         Usuario} */
-    // @ts-ignore
-    const data = doc.data(daoUsuario);
+    const data = doc.data();
     const img = cod(
       await urlStorage(doc.id));
     const alumno =
@@ -100,8 +96,7 @@ import {
             href=
       "usuario.html?${parámetros}">
           <span class="marco">
-           
-          <img src="${img}"
+            <img src="${img}"
               alt="Falta el Avatar">
           </span>
           <span class="texto">
