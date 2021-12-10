@@ -87,7 +87,7 @@ import {
       await urlStorage(doc.id));
     const alumno =
       await buscaAlumno(
-        data.id);
+        data.alumnoId);
     const roles =
       await buscaRoles(data.rolIds);
     const parámetros =
@@ -158,7 +158,7 @@ import {
         html += /* html */
           `<em>${cod(doc.id)}</em>
           <br>
-          ${cod(data.descripción)}
+          ${cod(data.descripcion)}
           <br>`;
       }
       return html;
