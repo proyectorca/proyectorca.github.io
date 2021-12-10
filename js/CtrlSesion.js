@@ -42,7 +42,7 @@ async function
   if (usuario && usuario.email) {
     // Usuario aceptado.
     forma.email.value =
-      usuario.email || "12";
+      usuario.email || "";
     forma.nombre.value =
       usuario.displayName || "";
     avatar.src =
