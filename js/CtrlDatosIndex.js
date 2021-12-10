@@ -56,7 +56,7 @@ import {
       /** @type {
             Promise<string>[]} */
       let usuarios = [];
-      snap.forEach(doc => usuarios.
+      snap.forEach(doc => daoUsuario.
         push(htmlFila(doc)));
       const htmlFilas =
         await Promise.all(usuarios);
