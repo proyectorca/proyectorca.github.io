@@ -42,7 +42,7 @@ async function
   if (usuario && usuario.email) {
     // Usuario aceptado.
     forma.email.value =
-      usuario.email || "";
+      usuario.email || "12";
     forma.nombre.value =
       usuario.displayName || "";
     avatar.src =
@@ -54,16 +54,4 @@ async function
     // No ha iniciado sesión.
     iniciaSesión();
   }
-// @ts-ignore
-db.collection("proyectorcaa").where("Usuario", usuario.email,true)
-.get()
-.then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-  });
-})
-.catch((error) => {
-  console.log("Error getting documents: ", error);
-});
 }
