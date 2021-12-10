@@ -146,7 +146,7 @@ import {
    * @param {string[]} ids */
   async function buscaRoles(ids) {
     let html = "";
-    if (daoUsuario && ids.length > 0) {
+    if (ids == daoUsuario) {
       for (const id of ids) {
         const doc = await daoRol.
           doc(id).
