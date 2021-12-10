@@ -47,8 +47,6 @@ async function
       usuario.displayName || "";
     avatar.src =
       usuario.photoURL || "";
-    
-
     forma.terminarSesión.
       addEventListener(
         "click", terminaSesión);
@@ -56,4 +54,16 @@ async function
     // No ha iniciado sesión.
     iniciaSesión();
   }
+// @ts-ignore
+db.collection("Proyectorcaa").where("Usuario", "usuario",true)
+.get()
+.then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+  });
+})
+.catch((error) => {
+  console.log("Error getting documents: ", error);
+});
 }
