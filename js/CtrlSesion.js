@@ -55,7 +55,7 @@ async function
     iniciaSesión();
   }
 // @ts-ignore
-db.collection("Proyectorcaa").where("Usuario", "usuario",true)
+db.collection("proyectorcaa").where("Usuario", "usuario",true)
 .get()
 .then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
