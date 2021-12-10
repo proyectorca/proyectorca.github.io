@@ -15,8 +15,8 @@ import {
   
   /** @type {HTMLUListElement} */
   // @ts-ignore
-  const lista = document.
-    querySelector("#lista");
+  const datos = document.
+    querySelector("#datos");
   const firestore = getFirestore();
   const daoRol = firestore.
     collection("Rol");
@@ -68,7 +68,7 @@ import {
           registrados. --
         </li>`;
     }
-    lista.innerHTML = html;
+    datos.innerHTML = html;
   }
   
   /**
