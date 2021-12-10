@@ -12,7 +12,10 @@ import {
   import {
     tieneRol
   } from "./seguridad.js";
-  
+//**____________________________________ */
+
+
+/**__________________________________________ */
   /** @type {HTMLUListElement} */
   // @ts-ignore
   const lista = document.
@@ -84,7 +87,7 @@ import {
       await urlStorage(doc.id));
     const alumno =
       await buscaAlumno(
-        data.alumnoId);
+        data.usuario );
     const roles =
       await buscaRoles(data.rolIds);
     const parámetros =
@@ -96,7 +99,8 @@ import {
             href=
       "usuario.html?${parámetros}">
           <span class="marco">
-            <img src="${img}"
+           
+          <img src="${img}"
               alt="Falta el Avatar">
           </span>
           <span class="texto">
