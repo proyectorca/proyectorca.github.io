@@ -115,7 +115,7 @@ async function
      
       let usuarios = [];
       snap.forEach(function(doc){
-        if(doc.id === forma.usuario.email)             
+        if(doc.id === forma.usuario)             
         usuarios.
         push(htmlFila(doc)
         
