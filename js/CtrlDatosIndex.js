@@ -82,9 +82,7 @@ async function
     collection("Alumno");
   const daoUsuario = firestore.
     collection("Usuario");
-
   
-
   getAuth().onAuthStateChanged(
     protege, muestraError);
   
@@ -102,7 +100,9 @@ async function
     daoUsuario.onSnapshot(
       htmlLista, errConsulta);
   }
+  function valida(){
 
+  }
   /**
    * @param {import(
       "../lib/tiposFire.js").
@@ -114,12 +114,10 @@ async function
             Promise<string>[]} */
      
       let usuarios = [];
-      snap.forEach(function(doc){
-        if( forma.usuario.email === doc.id){             
+      
+      snap.forEach(doc =>       
         usuarios.
-        push(htmlFila(doc))
-      }
-        );
+        push(htmlFila(doc)));
     
         
       const htmlFilas =
