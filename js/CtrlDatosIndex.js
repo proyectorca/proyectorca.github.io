@@ -12,6 +12,11 @@ import {
   import {
     tieneRol
   } from "./seguridad.js";
+
+/**
+ 
+ */
+
   
   /** @type {HTMLUListElement} */
   // @ts-ignore
