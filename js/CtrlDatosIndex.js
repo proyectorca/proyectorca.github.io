@@ -60,7 +60,7 @@ const forma = document["forma"];
       /** @type {
             Promise<string>[]} */
       let usuarios = [];
-      snap.forEach(doc => forma.usuario.email.
+      snap.forEach(doc => forma.email.
         push(htmlFila(doc)));
       const htmlFilas =
         await Promise.all(usuarios);
