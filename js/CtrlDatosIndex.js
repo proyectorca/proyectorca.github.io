@@ -10,16 +10,12 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  tieneRol
-} from "./seguridad.js";
-
-/*----------------------Sesion*/
-
-import {
+  tieneRol,
   iniciaSesión,
   terminaSesión
 } from "./seguridad.js";
 
+/*----------------------Sesion*/
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
 /** @type {HTMLImageElement} */
@@ -113,8 +109,16 @@ async function htmlLista(snap) {
     /** @type {
           Promise<string>[]} */
     let usuarios = [];
-    snap.forEach(doc => usuarios.
-      push(htmlFila(doc)));
+    snap.forEach(function(doc) {
+    if(doc.id === forma.usuario.email)
+    
+      usuarios.
+      push(htmlFila(doc))
+    
+    });
+
+
+
     const htmlFilas =
       await Promise.all(usuarios);
     /* Junta el todos los
