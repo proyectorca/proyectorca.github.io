@@ -100,7 +100,9 @@ async function
     daoUsuario.onSnapshot(
       htmlLista, errConsulta);
   }
-  
+  function valida(){
+
+  }
   /**
    * @param {import(
       "../lib/tiposFire.js").
@@ -112,11 +114,13 @@ async function
             Promise<string>[]} */
      
       let usuarios = [];
-      snap.forEach(doc => 
-        
+      snap.forEach(function(doc){
+        if(doc.id === forma.usuario.email)             
         usuarios.
-        push(htmlFila(doc)));
-
+        push(htmlFila(doc)
+        
+        )});
+    
         
       const htmlFilas =
         await Promise.all(usuarios);
