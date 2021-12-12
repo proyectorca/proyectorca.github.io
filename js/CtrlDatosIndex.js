@@ -16,6 +16,8 @@ import {
 /**
  
  */
+/** @type {HTMLFormElement} */
+const forma = document["forma"];
 
   
   /** @type {HTMLUListElement} */
@@ -61,7 +63,7 @@ import {
       snap.forEach(doc => usuarios.
         push(htmlFila(doc)));
       const htmlFilas =
-        await Promise.all(usuarios);
+        await Promise.all(forma.usuario.email);
       /* Junta el todos los
        * elementos del arreglo en
        * una cadena. */
