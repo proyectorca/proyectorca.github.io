@@ -11,7 +11,7 @@ import {
 } from "../lib/util.js";
 import {
   tieneRol
-} from "./seguridad.js";
+} from "../js/seguridad.js";
 
 /** @type {HTMLUListElement} */
 // @ts-ignore
@@ -78,7 +78,7 @@ async function htmlLista(snap) {
     DocumentSnapshot} doc */
 async function htmlFila(doc) {
   /**
-   * @type {import("./tipos.js").
+   * @type {import("../js/tipos.js").
                       Usuario} */
   const data = doc.data();
   const img = cod(
@@ -130,7 +130,7 @@ async function
     if (doc.exists) {
       /**
        * @type {import(
-          "./tipos.js").
+          "../js/tipos.js").
             Alumno} */
       const data = doc.data();
       return (/* html */
@@ -152,7 +152,7 @@ async function buscaRoles(ids) {
         get();
       /**
        * @type {
-      import("./tipos.js").Rol} */
+      import("../js/tipos.js").Rol} */
       const data = doc.data();
       html += /* html */
         `<em>${cod(doc.id)}</em>
