@@ -41,10 +41,9 @@ class MiNav extends HTMLElement {
            * para clientes. */
           if (roles.has("Encargado")) {
             html += /* html */
-              `
-            <li>
+              `<li>
                 <a href="usuarios2.html">Encargados2</a>
-              </li> ` ;
+              </li>`;
           }
           if(roles.has("Empleado")){
             html += /* html */
@@ -52,24 +51,18 @@ class MiNav extends HTMLElement {
               <a href="usuarios.html">Encargados</a>
             </li>
             <li>
-                <a href="alumnos.html">Empleados</a>
-              </li>` ;}
+              <a href="alumnos.html">Empleados</a>
+            </li>`;}
 
           /* Enlaces para solo
            * administradores.
            */
           if (roles.has("Administrador")) {
             html += /* html */
-              `
-              <li>
+              `<li>
               <a href=
                 "chat.html">Chat</a>
-            </li>
-              `;
-              
-              }
-                           
-          
+            </li>`;}
           this.ul.innerHTML += html;
         }
       }
