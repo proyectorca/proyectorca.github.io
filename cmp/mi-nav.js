@@ -39,6 +39,7 @@ class MiNav extends HTMLElement {
           /* Enlaces para solo
            * para clientes. */
           if (roles.has("Encargado")) {
+            if(roles.has("Administrador")){
             html += /* html */
               `<li>
                 <a href=
@@ -50,6 +51,7 @@ class MiNav extends HTMLElement {
               <script type="module"
               src="js/CtrlUsuarios2.js">
               </script>`;
+              }
           }
           /* Enlaces para solo
            * administradores.
