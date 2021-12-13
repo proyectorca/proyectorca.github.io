@@ -25,6 +25,9 @@ const daoAlumno = firestore.
 const daoUsuario = firestore.
   collection("Usuario");
 
+  const daoEnce = firestore.
+  collection("Encargado");
+
 getAuth().onAuthStateChanged(
   protege, muestraError);
 
@@ -169,10 +172,11 @@ function errConsulta(e) {
   consulta();
 }
 
-const data = {
+
+const dato = {  
   nombre: "pp",
   dirección: "su casa"
 };
-// @ts-ignore
-const refNuevoDoc = await refCol.add(data);
+
+const refNuevoDoc = await daoEnce.add(dato);
 console.log(refNuevoDoc.id);
