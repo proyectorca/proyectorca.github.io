@@ -13,8 +13,7 @@ import {
   tieneRol
 } from "./seguridad.js";
 
-/** @type {HTMLUListElement} */
-// @ts-ignore
+
 const lista = document.
   querySelector("#lista");
 const firestore = getFirestore();
@@ -112,6 +111,8 @@ async function htmlFila(doc) {
           </label>
         </label>
       </a>
+      <br>
+      <br>
     </p>`);
 }
 
