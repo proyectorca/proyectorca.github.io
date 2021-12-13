@@ -113,8 +113,6 @@ async function htmlFila(doc) {
       </a>
     </li>`);
 }
-
-
 /** Recupera el html de un
  * alumno en base a su id.
  * @param {string} id */
