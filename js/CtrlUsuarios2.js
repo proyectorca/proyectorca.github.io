@@ -1,13 +1,17 @@
 import {
+  getAuth,
   getFirestore
 } from "../lib/fabrica.js";
 import {
   urlStorage
 } from "../lib/storage.js";
 import {
-  cod
+  cod,
+  muestraError
 } from "../lib/util.js";
-
+import {
+  tieneRol
+} from "./seguridad.js";
 
 /** @type {HTMLUListElement} */
 // @ts-ignore
@@ -20,6 +24,20 @@ const daoAlumno = firestore.
   collection("Alumno");
 const daoUsuario = firestore.
   collection("Usuario");
+
+
+getAuth().onAuthStateChanged(
+  protege, muestraError);
+
+/** @param {import(
+    "../lib/tiposFire.js").User}
+    usuario */
+async function protege(usuario) {
+  if (tieneRol(usuario,
+    ["Administrador"])) {
+        consulta();
+  }
+}
 
 function consulta() {
   daoUsuario.onSnapshot(
@@ -46,10 +64,10 @@ async function htmlLista(snap) {
     html += htmlFilas.join("");
   } else {
     html += /* html */
-      `<p class="vacio">
+      `<li class="vacio">
         -- No hay usuarios
         registrados. --
-      </p>`;
+      </li>`;
   }
   lista.innerHTML = html;
 }
@@ -70,7 +88,6 @@ async function htmlFila(doc) {
       data.alumnoId);
   const roles =
     await buscaRoles(data.rolIds);
-
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -79,27 +96,49 @@ async function htmlFila(doc) {
       <p class="fila conImagen"
           href=
     "usuario.html?${parámetros}">
-        <label class="marco">
+        <span class="marco">
           <img src="${img}"
             alt="Falta el Avatar">
-        </label>
-        <label class="texto">
+        </span>
+        <span class="texto">
           <strong
               class="primario">
             ${cod(doc.id)}
           </strong>
-          <label
+          <span
               class="secundario">
             ${alumno}<br>
             ${roles}
-          </label>
-        </label>
+          </span>
+        </span>
       </p>
       <br>
       <br>
     </li>`);
 }
 
+/** Recupera el html de un
+ * alumno en base a su id.
+ * @param {string} id */
+async function
+  buscaAlumno(id) {
+  if (id) {
+    const doc =
+      await daoAlumno.
+        doc(id).
+        get();
+    if (doc.exists) {
+      /**
+       * @type {import(
+          "./tipos.js").
+            Alumno} */
+      const data = doc.data();
+      return (/* html */
+        `${cod(data.nombre)}`);
+    }
+  }
+  return " ";
+}
 
 /** Recupera el html de los
  * roles en base a sus id
@@ -125,31 +164,10 @@ async function buscaRoles(ids) {
   } else {
     return "-- Sin Roles --";
   }
-}/*
-/** Recupera el html de un
- * alumno en base a su id.
- * @param {string} id */
- async function
- buscaAlumno(id) {
- if (id) {
-   const doc =
-     await daoAlumno.
-       doc(id).
-       get();
-   if (doc.exists) {
-     /**
-      * @type {import(
-         "./tipos.js").
-           Alumno} */
-     const data = doc.data();
-     return (/* html */
-       `${cod(data.nombre)}`);
-   }
- }
- return " ";
 }
 
 /** @param {Error} e */
 function errConsulta(e) {
+  muestraError(e);
   consulta();
 }
