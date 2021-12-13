@@ -93,11 +93,11 @@ async function htmlFila(doc) {
     new URLSearchParams();
   parámetros.append("id", doc.id);
   return (/* html */
-    `<p>
+    `<li>
       <p class="fila conImagen"
           href=
     "usuario.html?${parámetros}">
-        <label class="marco">
+        <label>
           <img src="${img}"
             alt="Falta el Avatar">
         </label>
@@ -115,7 +115,7 @@ async function htmlFila(doc) {
       </p>
       <br>
       <br>
-    </p>`);
+    </li>`);
 }
 
 
