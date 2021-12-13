@@ -93,22 +93,24 @@ async function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return (/* html */
     `<p>
-      <a>
-        <span class="marco">
+      <a class="fila conImagen"
+          href=
+    "usuario.html?${parámetros}">
+        <label class="marco">
           <img src="${img}"
             alt="Falta el Avatar">
-        </span>
-        <span class="texto">
+        </label>
+        <label class="texto">
           <strong
               class="primario">
             ${cod(doc.id)}
           </strong>
-          <span
+          <label
               class="secundario">
             ${alumno}<br>
             ${roles}
-          </span>
-        </span>
+          </label>
+        </label>
       </a>
     </p>`);
 }
