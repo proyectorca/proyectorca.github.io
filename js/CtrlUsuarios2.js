@@ -64,12 +64,12 @@ async function htmlLista(snap) {
     html += htmlFilas.join("");
   } else {
     html += /* html */
-      `<li class="vacio">
+      `<p class="vacio">
         -- No hay usuarios
         registrados. --
-      </li>`;
+      </p>`;
   }
-  lista.innerHTML = html;
+ // lista.innerHTML = html;
 }
 
 /**
@@ -115,28 +115,6 @@ async function htmlFila(doc) {
     </p>`);
 }
 
-/** Recupera el html de un
- * alumno en base a su id.
- * @param {string} id */
-async function
-  buscaAlumno(id) {
-  if (id) {
-    const doc =
-      await daoAlumno.
-        doc(id).
-        get();
-    if (doc.exists) {
-      /**
-       * @type {import(
-          "./tipos.js").
-            Alumno} */
-      const data = doc.data();
-      return (/* html */
-        `${cod(data.nombre)}`);
-    }
-  }
-  return " ";
-}
 
 /** Recupera el html de los
  * roles en base a sus id
@@ -162,6 +140,28 @@ async function buscaRoles(ids) {
   } else {
     return "-- Sin Roles --";
   }
+}
+/** Recupera el html de un
+ * alumno en base a su id.
+ * @param {string} id */
+ async function
+ buscaAlumno(id) {
+ if (id) {
+   const doc =
+     await daoAlumno.
+       doc(id).
+       get();
+   if (doc.exists) {
+     /**
+      * @type {import(
+         "./tipos.js").
+           Alumno} */
+     const data = doc.data();
+     return (/* html */
+       `${cod(data.nombre)}`);
+   }
+ }
+ return " ";
 }
 
 /** @param {Error} e */
