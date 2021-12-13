@@ -42,7 +42,7 @@ class MiNav extends HTMLElement {
           if (roles.has("Encargado")) {
             html += /* html */
                `<li>
-                <a href="usuarios2.html">Encargados2</a>
+                <a href="usuarios2.html">Equipos</a>
               </li>
               `;}
           if(roles.has("Empleado")){
@@ -51,7 +51,7 @@ class MiNav extends HTMLElement {
               <a href="alumnos.html">Empleados</a>
             </li>
             <li>
-            <a href="usuarios.html">Encargados</a>
+            <a href="usuarios.html">Editar Equipos</a>
             </li>`;}
 
           /* Enlaces para solo
