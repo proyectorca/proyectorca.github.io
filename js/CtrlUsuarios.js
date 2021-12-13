@@ -25,8 +25,6 @@ const daoAlumno = firestore.
 const daoUsuario = firestore.
   collection("Usuario");
 
-  const daoEnc = firestore.
-  collection("Encargado");
 
 getAuth().onAuthStateChanged(
   protege, muestraError);
@@ -160,14 +158,6 @@ async function buscaRoles(ids) {
         ${cod(data.descripción)}
         <br>`;
     }
-    const dato = {  
-      nombre: "pp",
-      dirección: "su casa"
-    };
-    // @ts-ignore
-    const refNuevoDoc = await daoEnc.add(dato);
-    // @ts-ignore
-    console.log(refNuevoDoc.id);
     return html;
   } else {
     return "-- Sin Roles --";
@@ -179,6 +169,3 @@ function errConsulta(e) {
   muestraError(e);
   consulta();
 }
-
-
-
