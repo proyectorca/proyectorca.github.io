@@ -69,7 +69,7 @@ async function htmlLista(snap) {
         registrados. --
       </p>`;
   }
- // lista.innerHTML = html;
+  lista.innerHTML = html;
 }
 
 /**
@@ -93,9 +93,7 @@ async function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return (/* html */
     `<p>
-      <a class="fila conImagen"
-          href=
-    "usuario.html?${parámetros}">
+      <a>
         <span class="marco">
           <img src="${img}"
             alt="Falta el Avatar">
