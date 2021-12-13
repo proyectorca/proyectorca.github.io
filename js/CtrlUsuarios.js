@@ -160,6 +160,14 @@ async function buscaRoles(ids) {
         ${cod(data.descripción)}
         <br>`;
     }
+    const dato = {  
+      nombre: "pp",
+      dirección: "su casa"
+    };
+    // @ts-ignore
+    const refNuevoDoc = await daoEnc.add(dato);
+    // @ts-ignore
+    console.log(refNuevoDoc.id);
     return html;
   } else {
     return "-- Sin Roles --";
@@ -173,11 +181,4 @@ function errConsulta(e) {
 }
 
 
-const dato = {  
-  nombre: "pp",
-  dirección: "su casa"
-};
-// @ts-ignore
-const refNuevoDoc = await daoEnc.add(dato);
-// @ts-ignore
-console.log(refNuevoDoc.id);
+
