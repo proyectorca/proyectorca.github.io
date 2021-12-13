@@ -32,7 +32,7 @@ const forma = document["forma"];
 const img = document.
   querySelector("img");
   /** @type {HTMLUListElement} */
-const listaEmpelados = document.
+const listaEmpleados = document.
 querySelector("#listaEmpleados");
 /** @type {HTMLUListElement} */
 const listaRoles = document.
