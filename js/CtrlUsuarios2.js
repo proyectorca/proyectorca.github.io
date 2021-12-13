@@ -15,8 +15,8 @@ import {
 
 /** @type {HTMLUListElement} */
 // @ts-ignore
-const lista = document.
-  querySelector("#lista");
+const datos = document.
+  querySelector("#datos");
 const firestore = getFirestore();
 const daoRol = firestore.
   collection("Rol");
@@ -69,7 +69,7 @@ async function htmlLista(snap) {
         registrados. --
       </li>`;
   }
-  lista.innerHTML = html;
+  datos.innerHTML = html;
 }
 
 /**
@@ -92,7 +92,7 @@ async function htmlFila(doc) {
     new URLSearchParams();
   parámetros.append("id", doc.id);
   return (/* html */
-    `<li>
+    `<p>
       <p class="fila conImagen"
           href=
     "usuario.html?${parámetros}">
@@ -114,7 +114,7 @@ async function htmlFila(doc) {
       </p>
       <br>
       <br>
-    </li>`);
+    </p>`);
 }
 
 /** Recupera el html de un
