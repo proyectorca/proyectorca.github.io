@@ -1,13 +1,11 @@
 import {
-  getAuth,
   getFirestore
 } from "../lib/fabrica.js";
 import {
   urlStorage
 } from "../lib/storage.js";
 import {
-  cod,
-  muestraError
+  cod
 } from "../lib/util.js";
 
 
@@ -22,13 +20,6 @@ const daoAlumno = firestore.
   collection("Alumno");
 const daoUsuario = firestore.
   collection("Usuario");
-
-
-// @ts-ignore
-getAuth().onAuthStateChanged(
-   muestraError);
-
-
 
 function consulta() {
   daoUsuario.onSnapshot(
