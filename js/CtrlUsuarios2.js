@@ -9,9 +9,7 @@ import {
   cod,
   muestraError
 } from "../lib/util.js";
-import {
-  tieneRol
-} from "./seguridad.js";
+
 
 /** @type {HTMLUListElement} */
 // @ts-ignore
@@ -26,18 +24,11 @@ const daoUsuario = firestore.
   collection("Usuario");
 
 
+// @ts-ignore
 getAuth().onAuthStateChanged(
-  protege, muestraError);
+   muestraError);
 
-/** @param {import(
-    "../lib/tiposFire.js").User}
-    usuario */
-async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Encargado"])) {
-        consulta();
-  }
-}
+
 
 function consulta() {
   daoUsuario.onSnapshot(
