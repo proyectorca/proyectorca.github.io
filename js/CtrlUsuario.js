@@ -19,7 +19,7 @@ import {
   checksAlumno,
   checksRoles,
   guardaUsuario,
-  selectAlumnos
+  
 } from "./usuarios.js";
 
 const params =

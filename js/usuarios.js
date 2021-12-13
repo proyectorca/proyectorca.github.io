@@ -127,7 +127,7 @@ export function
        <span class="texto">
          <strong
              class="primario">
-           ${cod(doc.id)}
+             ${cod(data.nombre)}
          </strong>
          <span
              class="secundario">
