@@ -13,7 +13,8 @@ import {
   tieneRol
 } from "./seguridad.js";
 
-
+/** @type {HTMLUListElement} */
+// @ts-ignore
 const lista = document.
   querySelector("#lista");
 const firestore = getFirestore();
@@ -68,7 +69,7 @@ async function htmlLista(snap) {
         registrados. --
       </p>`;
   }
-  lista.innerHTML = html;
+  //lista.innerHTML = html;
 }
 
 /**
