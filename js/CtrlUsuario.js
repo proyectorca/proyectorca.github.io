@@ -31,6 +31,9 @@ const daoUsuario = getFirestore().
 const forma = document["forma"];
 const img = document.
   querySelector("img");
+  /** @type {HTMLUListElement} */
+const listaEmpelados = document.
+querySelector("#listaEmpleados");
 /** @type {HTMLUListElement} */
 const listaRoles = document.
   querySelector("#listaRoles");
@@ -58,7 +61,7 @@ async function busca() {
       img.src =
         await urlStorage(id);
       selectAlumnos(
-        forma.alumnoId,
+        listaEmpleados,
         data.alummnoId)
       checksRoles(
         listaRoles, data.rolIds);

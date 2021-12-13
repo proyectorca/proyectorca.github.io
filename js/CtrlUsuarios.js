@@ -103,10 +103,12 @@ async function htmlFila(doc) {
           <strong
               class="primario">
             ${cod(doc.id)}
+            
           </strong>
           <span
               class="secundario">
               ${roles}<br>
+              Equipos
               ${alumno} <br> 
           </span>
         </span>
@@ -131,7 +133,8 @@ async function
       const data = doc.data();
       return (/* html */
         `${cod(data.nombre)}
-        ${cod(data.matricula)}`);
+        ${cod(data.matricula)}
+        ${cod(data.fecha)}`);
     }
   }
   return " ";

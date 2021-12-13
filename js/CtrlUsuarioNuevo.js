@@ -19,6 +19,7 @@ const forma = document["forma"];
 /** @type {HTMLUListElement} */
 const listaRoles = document.
   querySelector("#listaRoles");
+  
 
 getAuth().onAuthStateChanged(
   protege, muestraError);
