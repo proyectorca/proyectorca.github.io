@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width,
        initial-scale=1.0">
-  <title>Encargados</title>
-  <style>
+  <title>Equipos</title>
+   <style>
     html {
     background-image:
       url(fondo.jpeg);  
@@ -23,6 +23,7 @@
     background-size: cover;
   }
   </style>
+
   <script
     src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
     </script>
@@ -47,20 +48,16 @@
   <script type="module"
     src="cmp/mi-progreso.js">
     </script>
-  <script type="module"
-  src="js/CtrlUsuarios.js">
-  </script>
   <link rel="stylesheet"
     href="css/estilos.css">
 </head>
 <body>
   <mi-nav></mi-nav>
   <header>
-    <h1> Equipos </h1>
-    <p>Busca tu correo con el que te registraste</p>
+    <h1>Usuarios</h1>
     <div class="herramientas">
       <a href="usuarioNuevo.html">
-        Agregar Encargado..…</a>
+        Agregar…</a>
     </div>
   </header>
   <ul id="lista" class="lista">
@@ -70,6 +67,8 @@
     </li>
   </ul>
   <mi-footer></mi-footer>
-  
+  <script type="module"
+    src="js/CtrlUsuarios.js">
+    </script>
 </body>
 </html>
