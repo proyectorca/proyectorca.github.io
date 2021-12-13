@@ -151,6 +151,5 @@ async function buscaRoles(ids) {
 
 /** @param {Error} e */
 function errConsulta(e) {
-  muestraError(e);
   consulta();
 }
