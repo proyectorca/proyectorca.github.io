@@ -121,7 +121,7 @@ export function
    `<li>
      <label class="fila">
        <input type="checkbox"
-           name="rolIds"
+           name="alumnos"
            value="${cod(doc.id)}"
          ${checkede}>
        <span class="texto">
