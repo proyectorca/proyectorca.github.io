@@ -69,7 +69,7 @@ async function htmlLista(snap) {
         registrados. --
       </p>`;
   }
-  lista.innerText = html;
+  lista.innerHTML = html;
 }
 
 /**
@@ -142,7 +142,7 @@ async function buscaRoles(ids) {
   } else {
     return "-- Sin Roles --";
   }
-}
+}/*
 /** Recupera el html de un
  * alumno en base a su id.
  * @param {string} id */
