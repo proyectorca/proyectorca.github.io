@@ -69,7 +69,7 @@ async function htmlLista(snap) {
         registrados. --
       </p>`;
   }
-  //lista.innerHTML = html;
+  lista.innerText = html;
 }
 
 /**
