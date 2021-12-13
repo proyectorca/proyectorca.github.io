@@ -17,10 +17,7 @@ class MiNav extends HTMLElement {
           <a href="index.html">
             Inicio</a>
         </li>
-        <li>
-              <a href=
-                "chat.html">Chat</a>
-            </li>
+       
       </ul>`;
     this.ul =
       this.querySelector("ul");
@@ -46,15 +43,14 @@ class MiNav extends HTMLElement {
             html += /* html */
               `
               <li>
-                <a href="usuarios2.html">Encargados</a>
-              </li>`
-              ;
+              <a href=
+                "chat.html">Chat</a>
+            </li>` ;
           }
           /* Enlaces para solo
            * administradores.
            */
-          if (roles.has(
-            "Administrador")) {
+          if (roles.has("Administrador")) {
             html += /* html */
               `
               <li>
@@ -63,6 +59,9 @@ class MiNav extends HTMLElement {
 
               <li>
                 <a href="usuarios.html">Encargados</a>
+              </li>
+              <li>
+                <a href="usuarios2.html">Encargados2</a>
               </li>
               `;
           }
