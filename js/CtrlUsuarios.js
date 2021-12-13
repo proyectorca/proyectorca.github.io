@@ -85,11 +85,7 @@ async function htmlFila(doc) {
   const alumno =
     await buscaAlumno(
       data.alumnoId);
-  const matricula =
-  await buscaAlumno(
-    data.matricula
-  );
-   const roles =
+    const roles =
     await buscaRoles(data.rolIds);
   const parámetros =
     new URLSearchParams();
@@ -112,7 +108,6 @@ async function htmlFila(doc) {
               class="secundario">
               ${roles}<br>
               ${alumno} <br> 
-              ${matricula}
           </span>
         </span>
       </a>
@@ -135,7 +130,8 @@ async function
             Alumno} */
       const data = doc.data();
       return (/* html */
-        `${cod(data.nombre)}`);
+        `${cod(data.nombre)}
+        ${cod(data.matricula)}`);
     }
   }
   return " ";

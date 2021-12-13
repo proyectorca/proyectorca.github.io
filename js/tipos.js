@@ -6,6 +6,7 @@
 /**
  * @typedef {Object} Alumno
  * @property {string} nombre
+ * @property {string} matricula
  */
 
 /**
