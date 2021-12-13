@@ -16,6 +16,7 @@ import {
   tieneRol
 } from "./seguridad.js";
 import {
+  checksAlumno,
   checksRoles,
   guardaUsuario,
   selectAlumnos
@@ -60,7 +61,7 @@ async function busca() {
       forma.cue.value = id || "";
       img.src =
         await urlStorage(id);
-      selectAlumnos(
+      checksAlumno(
         listaEmpleados,
         data.alummnoId)
       checksRoles(

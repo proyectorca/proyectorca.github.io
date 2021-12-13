@@ -11,10 +11,6 @@ import {
   muestraUsuarios
 } from "./navegacion.js";
 
-const SIN_ALUMNOS = /* html */
-  `<option value="">
-    -- Sin Alumnos --
-  </option>`;
 
 const firestore = getFirestore();
 const daoRol = firestore.
@@ -23,6 +19,8 @@ const daoAlumno = firestore.
   collection("Alumno");
 const daoUsuario = firestore.
   collection("Usuario");
+
+
 
 /**
  * @param {
@@ -71,6 +69,82 @@ function
       ${cod(data.nombre)}
     </option>`);
 }
+
+/*------------------*/
+
+/**
+ * @param {HTMLElement} elemento
+ * @param {string[]} valor */
+ export function
+ checksAlumno(elemento, valor) {
+ const set =
+   new Set(valor || []);
+ daoAlumno.onSnapshot(
+   snap => {
+     let html = "";
+     if (snap.size > 0) {
+       snap.forEach(doc =>
+         html +=
+         checkA(doc, set));
+     } else {
+       html += /* html */
+         `<li class="vacio">
+             -- No hay Alummno
+             registrados. --
+           </li>`;
+     }
+     elemento.innerHTML = html;
+   },
+   e => {
+     muestraError(e);
+     checksAlumno(
+       elemento, valor);
+   }
+ );
+}
+
+/**
+* @param {
+   import("../lib/tiposFire.js").
+   DocumentSnapshot} doc
+* @param {Set<string>} set */
+export function
+ checkA(doc, set) {
+ /**
+  * @type {
+     import("./tipos.js").Rol} */
+ const data = doc.data();
+ const checkede =
+   set.has(doc.id) ?
+     "checked" : "";
+ return (/* html */
+   `<li>
+     <label class="fila">
+       <input type="checkbox"
+           name="rolIds"
+           value="${cod(doc.id)}"
+         ${checkede}>
+       <span class="texto">
+         <strong
+             class="primario">
+           ${cod(doc.id)}
+         </strong>
+         <span
+             class="secundario">
+         ${cod(data.
+// @ts-ignore
+         descripcion)}
+         </span>
+       </span>
+     </label>
+   </li>`);
+}
+/*-----------------*/
+
+
+
+
+
 
 /**
  * @param {HTMLElement} elemento
