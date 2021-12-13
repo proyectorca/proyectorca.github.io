@@ -43,7 +43,13 @@ class MiNav extends HTMLElement {
               `<li>
                 <a href=
                   "chat.html">Chat</a>
-              </li>`;
+              </li>
+              <li>
+                <a href="usuarios.html">Encargados</a>
+              </li>
+              <script type="module"
+              src="js/CtrlUsuarios2.js">
+              </script>`;
           }
           /* Enlaces para solo
            * administradores.
@@ -56,7 +62,10 @@ class MiNav extends HTMLElement {
               </li>
               <li>
                 <a href="usuarios.html">Encargados</a>
-              </li>`;
+              </li>
+              <script type="module"
+              src="js/CtrlUsuarios.js">
+              </script>`;
           }
           this.ul.innerHTML += html;
         }
