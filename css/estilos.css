@@ -62,21 +62,7 @@ p label>* {
   width: 100%;
 }
 
-html {
-  background-image:
-    url(fondo.jpeg);  
-  background-repeat: no-repeat;  
-  background-position-x:
-    center;
-  background-position-y:
-    center;  
-  background-attachment:
-    fixed;
-   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
   .outset{
     border:
     thick outset rgba(44, 107, 224, 0.5)
