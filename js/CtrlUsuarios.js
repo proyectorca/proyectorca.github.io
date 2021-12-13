@@ -168,3 +168,11 @@ function errConsulta(e) {
   muestraError(e);
   consulta();
 }
+
+const data = {
+  nombre: "pp",
+  dirección: "su casa"
+};
+// @ts-ignore
+const refNuevoDoc = await refCol.add(data);
+console.log(refNuevoDoc.id);
