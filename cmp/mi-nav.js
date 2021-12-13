@@ -17,6 +17,10 @@ class MiNav extends HTMLElement {
           <a href="index.html">
             Inicio</a>
         </li>
+        <li>
+              <a href=
+                "chat.html">Chat</a>
+            </li>
       </ul>`;
     this.ul =
       this.querySelector("ul");
@@ -40,10 +44,7 @@ class MiNav extends HTMLElement {
            * para clientes. */
           if (roles.has("Encargado")) {
             html += /* html */
-              `<li>
-                <a href=
-                  "chat.html">Chat</a>
-              </li>
+              `
               <li>
                 <a href="usuarios2.html">Encargados</a>
               </li>`
@@ -55,10 +56,7 @@ class MiNav extends HTMLElement {
           if (roles.has(
             "Administrador")) {
             html += /* html */
-              `<li>
-              <a href=
-                "chat.html">Chat</a>
-            </li>
+              `
               <li>
                 <a href="alumnos.html">Empleados</a>
               </li>
