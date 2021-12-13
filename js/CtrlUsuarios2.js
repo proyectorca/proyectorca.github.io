@@ -89,12 +89,12 @@ async function htmlFila(doc) {
   const roles =
     await buscaRoles(data.rolIds);
 
-  /*const parámetros =
+  const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
-  return (/* html 
+  return (/* html */
     `<p>
-      <a class="fila conImagen"
+      <p class="fila conImagen"
           href=
     "usuario.html?${parámetros}">
         <label class="marco">
@@ -112,11 +112,11 @@ async function htmlFila(doc) {
             ${roles}
           </label>
         </label>
-      </a>
+      </p>
       <br>
       <br>
     </p>`);
-}*
+}
 
 
 /** Recupera el html de los
