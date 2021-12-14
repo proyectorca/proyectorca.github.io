@@ -62,7 +62,7 @@ export function
  checkA(doc, set) {
  /**
   * @type {
-     import("./tipos.js").Rol} */
+     import("./tipos.js").Usuario} */
  const datos = doc.data();
  const checkede =
    set.has(doc.id) ?
@@ -77,7 +77,7 @@ export function
        <span class="texto">
          <strong
              class="primario">
-             ${cod(datos.nombre)}
+             ${cod(datos.alumnoId)}
          </strong>
          <span
              class="secundario">
