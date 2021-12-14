@@ -69,6 +69,7 @@ function htmlFila(doc) {
   const data = doc.data();
   const matricula = cod(data.matricula);
   const nombre = cod(data.nombre);
+  const grupo = cod(data.grupo);
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
   var espacio="[   -   ]";
@@ -78,12 +79,12 @@ function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
-      <p class="fila" href=
+      <a class="fila" href=
   "alumno.html?${parámetros}">
         <strong class="primario">
-          ${matricula} ${nombre} ${dformat}
+        ${nombre}${grupo} ${matricula} ${dformat}
         </strong>
-      </p>
+      </a>
      
     </li>`);
 }

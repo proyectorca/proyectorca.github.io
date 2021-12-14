@@ -3,7 +3,7 @@ class MiFooter extends HTMLElement {
     this.innerHTML = /* html */
       `<p>
         &copy; 2021
-        Ricardo Armando Machorro Reyes.
+       Alcala Ornelas Carlos Alberto.
       </p>`;
   }
 }
