@@ -45,6 +45,14 @@ class MiNav extends HTMLElement {
                   "chat.html">Chat</a>
               </li>`;
           }
+          if (roles.has(
+            "Personal")) {
+              html += /* html */
+              `<li>
+                <a href=
+                "usuarios2.html"  >Usu</a>
+              </li>`;
+          }
           /* Enlaces para solo
            * administradores.
            */

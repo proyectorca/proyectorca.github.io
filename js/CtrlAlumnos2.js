@@ -27,7 +27,7 @@ getAuth().
     usuario */
 async function protege(usuario) {
   if (tieneRol(usuario,
-    ["Administrador"])) {
+    ["Personal"])) {
     consulta();
   }
 }
@@ -79,12 +79,12 @@ function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
-      <a class="fila" href=
+      <p class="fila" href=
   "alumno.html?${parámetros}">
          <strong class="primario">
           ${nombre} - ${matricula} - ${ grupo} - ${dformat}
         </strong>
-      </a>
+      </p>
      
     </li>`);
 }
