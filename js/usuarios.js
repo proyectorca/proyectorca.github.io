@@ -20,56 +20,6 @@ const daoAlumno = firestore.
 const daoUsuario = firestore.
   collection("Usuario");
 
-
-
-/**
- * @param {
-    HTMLSelectElement} select
- * @param {string} valor */
-export function
-  selectAlumnos(select,
-    valor) {
-  valor = valor || "";
-  daoAlumno.
-    orderBy("nombre").
-    onSnapshot(
-      snap => {
-        let html = SIN_ALUMNOS;
-        snap.forEach(doc =>
-          html += htmlAlumno(
-            doc, valor));
-        select.innerHTML = html;
-      },
-      e => {
-        muestraError(e);
-        selectAlumnos(
-          select, valor);
-      }
-    );
-}
-
-/**
- * @param {
-  import("../lib/tiposFire.js").
-  DocumentSnapshot} doc
- * @param {string} valor */
-function
-  htmlAlumno(doc, valor) {
-  const selected =
-    doc.id === valor ?
-      "selected" : "";
-  /**
-   * @type {import("./tipos.js").
-                  Alumno} */
-  const data = doc.data();
-  return (/* html */
-    `<option
-        value="${cod(doc.id)}"
-        ${selected}>
-      ${cod(data.nombre)}
-    </option>`);
-}
-
 /*------------------*/
 
 /**
@@ -113,25 +63,25 @@ export function
  /**
   * @type {
      import("./tipos.js").Rol} */
- const data = doc.data();
+ const datos = doc.data();
  const checkede =
    set.has(doc.id) ?
-     "checked" : "";
+     "checkede" : "";
  return (/* html */
    `<li>
      <label class="fila">
        <input type="checkbox"
-           name="alumnos"
+           name="alumnoId"
            value="${cod(doc.id)}"
          ${checkede}>
        <span class="texto">
          <strong
              class="primario">
-             ${cod(data.nombre)}
+             ${cod(datos.nombre)}
          </strong>
          <span
              class="secundario">
-         ${cod(data.
+         ${cod(datos.
 // @ts-ignore
          descripcion)}
          </span>
@@ -224,8 +174,7 @@ export async function
   try {
     evt.preventDefault();
     const alumnoId =
-      getForánea(formData,
-        "alumnoId");
+      formData.getAll("alumnoId"); 
     const rolIds =
       formData.getAll("rolIds");
     await daoUsuario.
