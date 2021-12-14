@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   getAuth,
   getFirestore
@@ -117,27 +118,29 @@ async function htmlFila(doc) {
 }
 /** Recupera el html de un
  * alumno en base a su id.
- * @param {string} id */
+ * @param {string[]} ids*/
 async function
   buscaAlumno(id) {
-  if (id) {
+  let html = "";
+  if (id && id.length > 0)  {
+    for (const id of ids) {
     const doc =
       await daoAlumno.
         doc(id).
         get();
-    if (doc.exists) {
       /**
        * @type {import(
-          "./tipos.js").
-            Alumno} */
+          "./tipos.js").Alumno} */
       const data = doc.data();
-      return (/* html */
+      html +=/* html */
         `${cod(data.nombre)}
         ${cod(data.matricula)}
-        ${cod(data.fecha)}`);
+        ${cod(data.fecha)}`;
     }
+    return html;
+  }else{
+     return "Sin alumnos"
   }
-  return " ";
 }
 
 /** Recupera el html de los
