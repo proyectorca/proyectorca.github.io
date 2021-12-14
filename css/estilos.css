@@ -5,8 +5,8 @@
 :root {
   font-family: sans-serif;
   --col-active: #4646462c;
-  --color-header: white;
-  --colorMiNav: white;
+  --color-header: rgba(255, 255, 255, 0);
+  --colorMiNav: rgba(255, 255, 255, 0.144);
 }
 
 body {
@@ -43,7 +43,7 @@ h1 {
 }
 
 figure img {
-  max-width: 200%;
+  max-width: 300%;
 }
 
 legend,
