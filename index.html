@@ -44,6 +44,11 @@
   <script
     src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
     </script>
+   
+   <!-- Agrega el manejo de storage. -->
+   <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js">
+    </script>
   <!--
     Configura la app usando la
     información del sitio de
@@ -62,12 +67,14 @@
     </script>
   <link rel="stylesheet"
     href="css/estilos.css">
+   
 </head>
 <body>
+  
  <form name="forma">
     <mi-nav></mi-nav>
     <header>
-      <h1>Bienvenido</h1>
+      <h1>Informacion de tu Cuenta</h1>
       <div class="herramientas">
         <button
           type="button"
@@ -80,6 +87,7 @@
       <img id="avatar" src=""
         alt="Avatar">
     </figure>
+
     <p>
       <label>
         Nombre
@@ -89,6 +97,7 @@
         </output>
       </label>
     </p>
+
     <p>
       <label>
         Email
@@ -101,9 +110,10 @@
     <p class="outset">
       <center>Preciona en Equipos para vizualizar el Papel a desempeñar en el evento</center>
     </p>
-    <mi-footer></mi-footer>
+  
   </form>
-  <script type="module"
+  <mi-footer></mi-footer>
+ <script type="module"
     src="js/CtrlSesion.js">
     </script>
 </body>
