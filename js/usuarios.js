@@ -11,6 +11,10 @@ import {
   muestraUsuarios
 } from "./navegacion.js";
 
+const SIN_ALUMNOS = /* html */
+  `<option value="">
+    -- Sin Alumnos --
+  </option>`;
 
 const firestore = getFirestore();
 const daoRol = firestore.
@@ -20,81 +24,53 @@ const daoAlumno = firestore.
 const daoUsuario = firestore.
   collection("Usuario");
 
-/*------------------*/
-
 /**
- * @param {HTMLElement} elemento
- * @param {string[]} valor */
- export function
- checksAlumno(elemento, valor) {
- const set =
-   new Set(valor || []);
- daoAlumno.onSnapshot(
-   snap => {
-     let html = "";
-     if (snap.size > 0) {
-       snap.forEach(doc =>
-         html +=
-         checkA(doc, set));
-     } else {
-       html += /* html */
-         `<li class="vacio">
-             -- No hay Alummno
-             registrados. --
-           </li>`;
-     }
-     elemento.innerHTML = html;
-   },
-   e => {
-     muestraError(e);
-     checksAlumno(
-       elemento, valor);
-   }
- );
-}
-
-/**
-* @param {
-   import("../lib/tiposFire.js").
-   DocumentSnapshot} doc
-* @param {Set<string>} set */
+ * @param {
+    HTMLSelectElement} select
+ * @param {string} valor */
 export function
- checkA(doc, set) {
- /**
-  * @type {
-     import("./tipos.js").Usuario} */
- const datos = doc.data();
- const checkede =
-   set.has(doc.id) ?
-     "checkede" : "";
- return (/* html */
-   `<li>
-     <label class="fila">
-       <input type="checkbox"
-           name="alumnoId"
-           value="${cod(doc.id)}"
-         ${checkede}>
-       <span class="texto">
-         <strong
-             class="primario">
-             ${cod(datos.alumnoId)}
-         </strong>
-         <span
-             class="secundario">
-         ${cod(datos.
-// @ts-ignore
-         descripcion)}
-         </span>
-       </span>
-     </label>
-   </li>`);
+  selectAlumnos(select,
+    valor) {
+  valor = valor || "";
+  daoAlumno.
+    orderBy("nombre").
+    onSnapshot(
+      snap => {
+        let html = SIN_ALUMNOS;
+        snap.forEach(doc =>
+          html += htmlAlumno(
+            doc, valor));
+        select.innerHTML = html;
+      },
+      e => {
+        muestraError(e);
+        selectAlumnos(
+          select, valor);
+      }
+    );
 }
-/*-----------------*/
 
-
-
-
-
+/**
+ * @param {
+  import("../lib/tiposFire.js").
+  DocumentSnapshot} doc
+ * @param {string} valor */
+function
+  htmlAlumno(doc, valor) {
+  const selected =
+    doc.id === valor ?
+      "selected" : "";
+  /**
+   * @type {import("./tipos.js").
+                  Alumno} */
+  const data = doc.data();
+  return (/* html */
+    `<option
+        value="${cod(doc.id)}"
+        ${selected}>
+      ${cod(data.nombre)}
+    </option>`);
+}
 
 /**
  * @param {HTMLElement} elemento
@@ -155,9 +131,7 @@ export function
           </strong>
           <span
               class="secundario">
-          ${cod(data.
-// @ts-ignore
-          descripcion)}
+          ${cod(data.descripción)}
           </span>
         </span>
       </label>
@@ -174,7 +148,8 @@ export async function
   try {
     evt.preventDefault();
     const alumnoId =
-      formData.getAll("alumnoId"); 
+      getForánea(formData,
+        "alumnoId");
     const rolIds =
       formData.getAll("rolIds");
     await daoUsuario.

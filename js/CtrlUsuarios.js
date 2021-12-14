@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   getAuth,
   getFirestore
@@ -86,7 +85,7 @@ async function htmlFila(doc) {
   const alumno =
     await buscaAlumno(
       data.alumnoId);
-    const roles =
+  const roles =
     await buscaRoles(data.rolIds);
   const parámetros =
     new URLSearchParams();
@@ -104,43 +103,38 @@ async function htmlFila(doc) {
           <strong
               class="primario">
             ${cod(doc.id)}
-            
           </strong>
           <span
               class="secundario">
-              ${roles}<br>
-              Equipos
-              ${alumno} <br> 
+            ${alumno}<br>
+            ${roles}
           </span>
         </span>
       </a>
     </li>`);
 }
+
 /** Recupera el html de un
  * alumno en base a su id.
- * @param {string[]} ids*/
+ * @param {string} id */
 async function
   buscaAlumno(id) {
-  let html = "";
-  if (id && id.length > 0)  {
-    for (const id of ids) {
+  if (id) {
     const doc =
       await daoAlumno.
         doc(id).
         get();
+    if (doc.exists) {
       /**
        * @type {import(
-          "./tipos.js").Alumno} */
+          "./tipos.js").
+            Alumno} */
       const data = doc.data();
-      html +=/* html */
-        `${cod(data.nombre)}
-        ${cod(data.matricula)}
-        ${cod(data.fecha)}`;
+      return (/* html */
+        `${cod(data.nombre)}`);
     }
-    return html;
-  }else{
-     return "Sin alumnos"
   }
+  return " ";
 }
 
 /** Recupera el html de los
