@@ -5,7 +5,28 @@
   <meta name="viewport"
     content="width=device-width,
        initial-scale=1.0">
-  <title>Sesión</title>
+<style>
+        html {
+        background-image:
+          url(fondo.jpeg);  
+        background-repeat: no-repeat;  
+        background-position-x:
+          center;
+        background-position-y:
+          center;  
+        background-attachment:
+          fixed;
+         -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;}
+        .outset {
+        border:
+          thick outset rgb(104, 171, 247);
+      
+      }
+</style>
+  <title>Bienvenido</title>
   <!--
     Carga el núcleo de Firebase
     JS SDK
@@ -65,8 +86,8 @@
     </figure>
     <p>
       <label>
-        Email
-        <output name="email">
+       <h2>Nombre</h2> 
+        <output name="nombre">
           <mi-progreso>
           </mi-progreso>
         </output>
@@ -74,13 +95,18 @@
     </p>
     <p>
       <label>
-        Nombre
-        <output name="nombre">
+        <h2>Email</h2>
+        <output name="email">
           <mi-progreso>
           </mi-progreso>
         </output>
       </label>
     </p>
+    <br>
+  <p class="outset" style="text-align:center">
+      Preciona en Equipos para vizualizar el Papel a desempeñar en el evento
+  </p>
+
     <mi-footer></mi-footer>
   </form>
   <script type="module"
