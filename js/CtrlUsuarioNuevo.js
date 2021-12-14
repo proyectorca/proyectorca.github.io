@@ -11,7 +11,7 @@ import {
 import {
   checksRoles,
   guardaUsuario,
-  selectAlumnos
+  checksAlumno
 } from "./usuarios.js";
 
 /** @type {HTMLFormElement} */
@@ -19,6 +19,8 @@ const forma = document["forma"];
 /** @type {HTMLUListElement} */
 const listaRoles = document.
   querySelector("#listaRoles");
+const listaAlumnos = document.
+  querySelector("#listaAlumnos");
   
 
 getAuth().onAuthStateChanged(
