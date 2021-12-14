@@ -15,8 +15,9 @@ class MiNav extends HTMLElement {
       `<ul>
         <li>
           <a href="index.html">
-            Sesión</a>
+            Inicio</a>
         </li>
+       
       </ul>`;
     this.ul =
       this.querySelector("ul");
@@ -38,30 +39,32 @@ class MiNav extends HTMLElement {
               usu.email);
           /* Enlaces para solo
            * para clientes. */
-          if (roles.has("Cliente")) {
+          if (roles.has("Encargado")) {
             html += /* html */
-              `<li>
-                <a href=
-                  "chat.html">Chat</a>
-              </li>`;
-          }
+               `<li>
+                <a href="usuarios2.html">Equipos</a>
+              </li>
+              `;}
+          if(roles.has("Empleado")){
+            html += /* html */
+            `<li>
+              <a href="alumnos.html">Empleados</a>
+            </li>
+            <li>
+            <a href="usuarios.html">Editar Equipos</a>
+            </li>`;}
+
           /* Enlaces para solo
            * administradores.
            */
-          if (roles.has(
-            "Administrador")) {
+          if (roles.has("Administrador")) {
             html += /* html */
               `<li>
-                <a href="alumnos.html">Alumnos</a>
-              </li>
-              <li>
-                <a href="usuarios.html">Usuarios</a>
-              </li>`;
-          }
+              <a href=
+                "chat.html">Chat</a>
+            </li>
+            `;}
           this.ul.innerHTML += html;
         }
       }
     }
-
-
-customElements.define("mi-nav", MiNav);
