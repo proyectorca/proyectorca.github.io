@@ -6,23 +6,6 @@
     content="width=device-width,
        initial-scale=1.0">
   <title>Sesión</title>
-  <style>
-    html {
-    background-image:
-      url(fondo.jpeg);  
-    background-repeat: no-repeat;  
-    background-position-x:
-      center;
-    background-position-y:
-      center;  
-    background-attachment:
-      fixed;
-     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  </style>
   <!--
     Carga el núcleo de Firebase
     JS SDK
@@ -44,11 +27,6 @@
   <script
     src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
     </script>
-   
-   <!-- Agrega el manejo de storage. -->
-   <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js">
-    </script>
   <!--
     Configura la app usando la
     información del sitio de
@@ -67,14 +45,12 @@
     </script>
   <link rel="stylesheet"
     href="css/estilos.css">
-   
 </head>
 <body>
-  
  <form name="forma">
     <mi-nav></mi-nav>
     <header>
-      <h1>Informacion de tu Cuenta</h1>
+      <h1>Sesión</h1>
       <div class="herramientas">
         <button
           type="button"
@@ -87,17 +63,6 @@
       <img id="avatar" src=""
         alt="Avatar">
     </figure>
-
-    <p>
-      <label>
-        Nombre
-        <output name="nombre">
-          <mi-progreso>
-          </mi-progreso>
-        </output>
-      </label>
-    </p>
-
     <p>
       <label>
         Email
@@ -107,13 +72,18 @@
         </output>
       </label>
     </p>
-    <p class="outset">
-      <center>Preciona en Equipos para vizualizar el Papel a desempeñar en el evento</center>
+    <p>
+      <label>
+        Nombre
+        <output name="nombre">
+          <mi-progreso>
+          </mi-progreso>
+        </output>
+      </label>
     </p>
-  
+    <mi-footer></mi-footer>
   </form>
-  <mi-footer></mi-footer>
- <script type="module"
+  <script type="module"
     src="js/CtrlSesion.js">
     </script>
 </body>

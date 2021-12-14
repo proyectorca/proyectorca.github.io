@@ -2,7 +2,6 @@
 @import "mi-footer.css";
 @import "listas.css";
 
-
 :root {
   font-family: sans-serif;
   --col-active: #4646462c;
@@ -61,9 +60,3 @@ p label>* {
   box-sizing: border-box;
   width: 100%;
 }
-
-
-  .outset{
-    border:
-    thick outset rgba(44, 107, 224, 0.5)
- }

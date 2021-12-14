@@ -3,9 +3,9 @@ class MiFooter extends HTMLElement {
     this.innerHTML = /* html */
       `<p>
         &copy; 2021
-        Alcala Ornelas CarlosAlberto.
+        Ricardo Armando Machorro Reyes.
       </p>`;
   }
-} 
+}
 
 customElements.define("mi-footer", MiFooter);
