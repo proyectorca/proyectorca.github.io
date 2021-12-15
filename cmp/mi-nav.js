@@ -38,30 +38,10 @@ class MiNav extends HTMLElement {
               usu.email);
           /* Enlaces para solo
            * para clientes. */
-          if (roles.has("Empleado")) {
-            html += /* html */
-              `<li>
-              <a href=
-              "alumnos2.html"  >Personal2</a>
-            </li> 
-              `;
-          }
-          if (roles.has(
-            "Personal")) {
-              html += /* html */
-              `
-              <li>
-                <a href="alumnos.html">Personal</a>
-              </li>
-              <li>
-                <a href="usuarios.html">Usuarios</a>
-              </li>
-              `;
-          }
-          /* Enlaces para solo
+           /* Enlaces para solo
            * administradores.
            */
-          if (roles.has(
+           if (roles.has(
             "Administrador")) {
             html += /* html */
               `
@@ -70,6 +50,27 @@ class MiNav extends HTMLElement {
                   "chat.html">Chat</a>
               </li>`;
           }
+          if (roles.has("Empleado")) {
+            html += /* html */
+              `<li>
+              <a href=
+              "alumnos2.html"  >Personal</a>
+            </li> 
+              `;
+          }
+          if (roles.has(
+            "Personal")) {
+              html += /* html */
+              `
+              <li>
+                <a href="alumnos.html">Editar Personal</a>
+              </li>
+              <li>
+                <a href="usuarios.html">Usuarios</a>
+              </li>
+              `;
+          }
+        
           this.ul.innerHTML += html;
         }
       }
