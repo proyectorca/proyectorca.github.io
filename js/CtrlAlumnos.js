@@ -51,7 +51,7 @@ function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay alumnos
+        -- No hay personal
         registrados. --
       </li>`;
   }
